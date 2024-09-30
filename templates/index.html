@@ -1,0 +1,43 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+<div class="container">
+
+    <h1>Test Results</h1>
+
+    <div class="global-summary">
+        {% if data.passed and not data.failed %}
+        <b class="text-pass">All Passed!</b>
+        {% elif not data.passed and data.failed %}
+        <b class="text-fail">All Failed!</b>
+        {% else %}
+        <span class="text-pass"><b>{{ data.passed | count }}</b> Passed</span>
+        <span> | </span>
+        <span class="text-fail"><b>{{ data.failed | count }}</b> Failed</span>
+        {% endif %}
+    </div>
+
+    <hr>
+
+    {% for plan_name, plan in data.plans.items() %}
+    <div class="plan">
+        <a href="{{plan.link}}">{{plan_name}}</a>
+        {% if plan.passed and not plan.failed %}
+        <span class="text-pass">All Passed!</span>
+        {% elif not plan.passed and plan.failed %}
+        <span class="text-fail">All Failed!</span>
+        {% else %}
+        <span class="text-pass">{{ plan.passed | count }} Passed</span>
+        <span> | </span>
+        <span class="text-fail">{{ plan.failed | count }} Failed</span>
+        {% endif %}
+
+    </div>
+    {% endfor %}
+
+    </div>
+
+</div>
+
+{% endblock %}

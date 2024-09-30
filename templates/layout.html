@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Test Results</title>
+</head>
+
+<style>
+    body {
+        background: #eee;
+        padding: 3em;
+        font-family: sans-serif;
+        text-align: center;
+    }
+
+    div.container {
+        display: inline-block;
+        background: white;
+        padding: 2em;
+        border-radius: 1ex;
+        width: 400px;
+    }
+
+    div.plan {
+        padding: 8px;
+        background: #eee;
+        border-radius: 1ex;
+        margin: 14px 0;
+    }
+
+    div.plan a {
+        font-size: large;
+        display: block;
+        padding: 12px 12px;
+        font-weight: bolder;
+    }
+
+    a {
+        color: #29f;
+        text-decoration: none;
+    }
+
+    a:hover {
+        text-decoration: underline;
+    }
+
+    h1 {
+        color: #aaa;
+        margin: 0ex 0ex 1ex 0px;
+    }
+
+    .global-summary {
+        font-size: large;
+        padding-bottom: 16px;
+    }
+
+    .text-pass {
+        color: #0a0 !important;
+    }
+
+    .text-fail {
+        color: #d30 !important;
+    }
+</style>
+
+    <body>
+        {% block content %}{% endblock %}
+    </body>
+</html>
